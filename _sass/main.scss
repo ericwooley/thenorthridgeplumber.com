@@ -1,0 +1,28 @@
+#logo {
+    position: fixed;
+    top: 100px;
+    height: 300px;
+}
+.phone-title {
+    font-size: 26px;
+    line-height: 56px;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    float: left;
+    color: #424242;
+    &:after {
+        content: "1 - 818 - 298 - 1344"; 
+        opacity: .8;
+        transition: all 2s;
+        font-size: 12px;
+    }
+    &:hover {
+        color: #424242;
+        &:after {
+            font-size: 26px;
+            opacity: 1;
+            transition: all .5s;
+        }
+    }
+    margin-left: 10px;
+}

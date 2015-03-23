@@ -6,7 +6,7 @@
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
     color: #FFF;
-    background-color: rgba(0,0,0, .8);
+    background-color: $grey-color-dark;
     z-index: 1;
     margin-bottom: 10px;
     // Positioning context for the mobile navigation icon
@@ -15,12 +15,12 @@
     &:after {
         margin-bottom: 300px;    
     }
+    padding-top: 10px;
     
 }
 
 .site-title {
     font-size: 26px;
-    line-height: 56px;
     letter-spacing: -1px;
     margin-bottom: 0;
     float: left;
@@ -30,21 +30,64 @@
         color: $grey-color-light;
     }
 }
-
-.site-nav {
-    float: right;
-    line-height: 56px;
-
-    .menu-icon {
-        display: none;
+.phone-title {
+    font-size: 26px;
+    // line-height: 56px;
+    letter-spacing: -1px;
+    
+    float: left;
+    color: $grey-color-light; 
+    @include media-query($screen-sm) {
+        display: block;
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        height: 65px;
+        opacity: 1;
+        background-color:green;
+        text-align: center;
+        margin: 0;
+        padding: 10px;
+        z-index: 999;
+        font-size: 25px;
+    }
+    &:after {
+        margin: 0 15px 0 15px;
+        content: "1 - 818 - 298 - 1344"; 
+        opacity: .8;
+        transition: all 2s;
+        font-size: 12px;
+        vertical-align: middle;
+        @include media-query($screen-sm) {
+            font-size: 25px;
+        }
     }
 
+    &:hover {
+        color: $grey-color-light;
+        &:after {
+            font-size: 26px;
+            opacity: 1;
+            transition: all .5s;
+        }
+    }
+    margin-left: 10px;
+}
+
+.site-nav {
+    margin: 0;
+    padding: 0;
+    float: right;
+    line-height: 56px;
+    background-color: $grey-color-dark;
+    border: none;
     .page-link {
         color: $grey-color-light;
         line-height: $base-line-height;
         transition: font-size .5s;
         &:hover {
-            font-size: 20px;
+            text-decoration: underline;
             
         }
         // Gaps between nav items, but not on the first one
@@ -52,52 +95,45 @@
             margin-left: 20px;
         }
     }
-
-    @include media-query($on-palm) {
-        position: absolute;
-        top: 9px;
-        right: 30px;
-        background-color: $background-color;
-        border: 1px solid $grey-color-light;
-        border-radius: 5px;
-        text-align: right;
-
-        .menu-icon {
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        &:hover, &:active {
+            background-color: darken($grey-color-dark, 5%);
+        }
+        text-align: center;
+        display: inline-block;
+        height: auto;
+        list-style: none;
+        margin-right: 10px;
+        @include media-query($screen-sm) {
             display: block;
-            float: right;
-            width: 36px;
-            height: 26px;
-            line-height: 0;
-            padding-top: 10px;
-            text-align: center;
-
-            > svg {
-                width: 18px;
-                height: 15px;
-
-                path {
-                    fill: $grey-color-dark;
-                }
+                margin: 0;
+                padding: 0;
+            a {
+                display: block;
+                margin: 0;
+                padding: 10px;
+                border-bottom: 1px solid $grey-color-light;    
+                height: 100%;
+                width: 100%;
             }
-        }
-
-        .trigger {
-            clear: both;
-            display: none;
-        }
-
-        &:hover .trigger {
-            display: block;
-            padding-bottom: 5px;
-        }
-
-        .page-link {
-            display: block;
-            padding: 5px 10px;
+            
         }
     }
 }
 .main {
     margin-top: 15px;
 }
+.badges {
+    padding-top:70px;
+}
+
+$offcanvas-width: 250px !default; // The width of the offcanvas menu
+$offcanvas-animation-time: 0.15s !default; // Transition time to pull/hide menu
+$offcanvas-toggle-background: $grey-color-dark !default; // Background colour for toggle
+$offcanvas-toggle-bars-color: $grey-color-light !default; // Colour for icon bars in toggle
+@import "offcanvas/bootstrap.offcanvas";
 

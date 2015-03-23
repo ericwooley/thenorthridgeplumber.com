@@ -4,11 +4,11 @@ $(function(){
     _.each(waypoints, function(waypoint){
         new Waypoint({
             element: waypoint,
-            offset: '18%',
+            offset: '10%',
             handler: function(direction) {
                 $(this.element).animate({
                     opacity: direction === 'up'? 1: 0,
-                }, 'slow');
+                }, 'fast');
             }
         });
         new Waypoint({

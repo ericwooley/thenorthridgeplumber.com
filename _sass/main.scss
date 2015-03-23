@@ -9,7 +9,7 @@
     letter-spacing: -1px;
     margin-bottom: 0;
     float: left;
-    color: #424242;
+    color: $grey-color-light; 
     &:after {
         content: "1 - 818 - 298 - 1344"; 
         opacity: .8;
@@ -17,7 +17,7 @@
         font-size: 12px;
     }
     &:hover {
-        color: #424242;
+        color: $grey-color-light;
         &:after {
             font-size: 26px;
             opacity: 1;

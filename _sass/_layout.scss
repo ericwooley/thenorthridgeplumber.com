@@ -5,9 +5,17 @@
     border-top: 5px solid $grey-color-dark;
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
-
+    color: #FFF;
+    background-color: rgba(0,0,0, .8);
+    z-index: 1;
+    margin-bottom: 10px;
     // Positioning context for the mobile navigation icon
-    position: relative;
+    position: fixed;
+    width: 100%;
+    &:after {
+        margin-bottom: 300px;    
+    }
+    
 }
 
 .site-title {
@@ -17,9 +25,9 @@
     margin-bottom: 0;
     float: left;
     transition: font-size .5s;
-    &,
-    &:visited {
-        color: $grey-color-dark;
+    color: $grey-color-light;
+    &:hover {
+        color: $grey-color-light;
     }
 }
 
@@ -32,7 +40,7 @@
     }
 
     .page-link {
-        color: $text-color;
+        color: $grey-color-light;
         line-height: $base-line-height;
         transition: font-size .5s;
         &:hover {
@@ -88,5 +96,8 @@
             padding: 5px 10px;
         }
     }
+}
+.main {
+    margin-top: 15px;
 }
 

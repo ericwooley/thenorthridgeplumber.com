@@ -1,10 +1,38 @@
 body {
     margin: 0;
     padding:0;
+    background: url("../assets/sunset.jpg");
     @include media-query($screen-sm) {
         padding-bottom: 65px;
     }
 }
+$main-color: rgb(247, 253, 0);
+h1, h2, h3, h4, a {
+    color: $main-color;
+    text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
+video#bgvid {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    // position: fixed; right: 0; left: auto; bottom: 0;
+    // min-width: 100%; min-height: 100%;
+    // width: auto; height: auto; z-index: -100;
+    // background: url(../assets/sunset.jpg) no-repeat;
+    // background-size: cover;
+}
+
+
 
 /**
  * Site header
@@ -24,6 +52,7 @@ body {
     &:after {
         margin-bottom: 300px;  
     }
+    background: url("../assets/images/metalbg.png");
     
 }
 
@@ -37,12 +66,13 @@ body {
     &:hover {
         color: $grey-color-light;
     }
+    margin-top: 10px;
 }
 .phone-title {
     font-size: 26px;
-    // line-height: 56px;
+    margin: 10px;
     letter-spacing: -1px;
-    
+    color: $main-color;
     float: left;
     color: $grey-color-light; 
     @include media-query($screen-sm) {
@@ -88,7 +118,10 @@ body {
     padding: 0;
     float: right;
     line-height: 56px;
-    background-color: $grey-color-dark;
+    background-color: transparent;
+    @include media-query($screen-sm) {
+        background-color: $grey-color-dark;    
+    }
     border: none;
     .page-link {
         color: $grey-color-light;
@@ -96,7 +129,6 @@ body {
         transition: font-size .5s;
         &:hover {
             text-decoration: underline;
-            
         }
         // Gaps between nav items, but not on the first one
         &:not(:first-child) {
@@ -109,7 +141,6 @@ body {
     }
     li {
         &:hover, &:active {
-            background-color: darken($grey-color-dark, 5%);
             border-radius: 5px 5px 5px 5px;
             -moz-border-radius: 5px 5px 5px 5px;
             -webkit-border-radius: 5px 5px 5px 5px;
@@ -126,6 +157,9 @@ body {
             height: 100%;
             width: 100%;
             @include media-query($screen-sm) {
+                &:hover {
+                    background-color: darken($grey-color-dark, 5%);
+                }
                 border-bottom: 1px solid $grey-color-light;    
                 padding: 10px;
             }
@@ -137,8 +171,12 @@ body {
         }
     }
 }
-.main {
-    margin-top: 15px;
+.content-container {
+    padding-top: 15px;
+    background-color: rgba(255,255,255, .9);
+}
+footer {
+    background-color: rgba(255,255,255, .9);   
 }
 .badges {
     padding-top:70px;

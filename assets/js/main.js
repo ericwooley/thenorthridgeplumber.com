@@ -6,7 +6,7 @@ $(function(){
             element: waypoint,
             offset: '10%',
             handler: function(direction) {
-                $(this.element).animate({
+                $(this.element).velocity({
                     opacity: direction === 'up'? 1: 0,
                 }, 'fast');
             }

@@ -6,7 +6,7 @@
   <body>
 
     {% include header.html %}
-    <div class='slick'>
+    <div class='slick' style='display: none'>
       <div class="panel">
         <img src="{{ site.baseurl }}/assets/images/plumbing/drain.jpg">
       </div>
@@ -24,12 +24,38 @@
       </div>
     </div>
     <div class="slider-nav"></div>
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
+    <div class="">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="service-badge">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  Basic panel example
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-10">{{ content }}</div>
+          <div class="col-lg-2">
+            <div class="service-badge">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  Basic panel example
+                </div>
+              </div>
+            </div>
+            <div class="service-badge">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  Basic panel example
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
     {% include footer.html %}
     {% include jsincludes.html %}
   </body>

@@ -1,3 +1,9 @@
+body {
+    @include media-query($screen-sm) {
+        padding-bottom: 65px;
+    }
+}
+
 /**
  * Site header
  */

@@ -29,10 +29,9 @@ $content-width:    800px;
     }
 }
 
-
-
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
+        "bourbon",
         "bootstrap/assets/stylesheets/_bootstrap.scss",
         "base",
         "layout",

@@ -7,7 +7,8 @@ body {
     }
 }
 $main-color: rgb(247, 253, 0);
-h1, h2, h3, h4, a {
+h1, h2, h3, h4 {
+    padding-bottom: 0;
     color: $main-color;
     text-shadow:
    -1px -1px 1px #000,  
@@ -59,23 +60,37 @@ video#bgvid {
 .site-title {
     font-size: 26px;
     letter-spacing: -1px;
-    margin-bottom: 0;
+    margin: 0;
+    padding: 10px 0 0 0;
     float: left;
     transition: font-size .5s;
     color: $grey-color-light;
     &:hover {
         color: $grey-color-light;
     }
+    h3 {
+        margin: 0;
+    }
     margin-top: 10px;
 }
 .phone-title {
+    @include border-top-radius(5px);
+    @include border-right-radius(5px);
+    @include border-bottom-radius(5px);
+    @include border-left-radius(5px);
+    .btn-success{
+        background-color: green;    
+    }
+    
+    
+    padding: 5px;
     font-size: 26px;
-    margin: 10px;
+    margin-top: 10px;
     letter-spacing: -1px;
     color: $main-color;
     float: left;
     color: $grey-color-light; 
-    @include media-query($screen-sm) {
+    @include media-query($screen-md-max) {
         display: block;
         position: fixed;
         bottom: 0px;
@@ -90,22 +105,11 @@ video#bgvid {
         z-index: 999;
         font-size: 25px;
     }
-    &:after {
-        margin: 0 15px 0 15px;
-        content: "1 - 818 - 298 - 1344"; 
-        opacity: .8;
-        transition: all 2s;
-        font-size: 12px;
-        vertical-align: middle;
-        @include media-query($screen-sm) {
-            font-size: 25px;
-        }
-    }
 
     &:hover {
         color: $grey-color-light;
         &:after {
-            font-size: 26px;
+            font-size: 6;
             opacity: 1;
             transition: all .5s;
         }

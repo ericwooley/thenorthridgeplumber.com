@@ -74,10 +74,10 @@ video#bgvid {
     margin-top: 10px;
 }
 .phone-title {
-    @include border-top-radius(5px);
-    @include border-right-radius(5px);
-    @include border-bottom-radius(5px);
-    @include border-left-radius(5px);
+    // @include border-top-radius(5px);
+    // @include border-right-radius(5px);
+    // @include border-bottom-radius(5px);
+    // @include border-left-radius(5px);
     .btn-success{
         background-color: green;    
     }

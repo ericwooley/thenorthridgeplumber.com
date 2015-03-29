@@ -13,3 +13,5 @@ baseurl: "/thenorthridgeplumber.com" # the subpath of your site, e.g. /blog/
 
 # Build settings
 markdown: kramdown
+gems:
+- bourbon

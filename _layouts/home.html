@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+    <div class="main">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6 badges">
+            {% include badges-left.html %}
+          </div>
+          <div class="col-lg-5 badges">
+            {% include badges-right.html %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% include footer.html %}
+    {% include jsincludes.html %}
+  </body>
+
+</html>

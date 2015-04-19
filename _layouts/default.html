@@ -7,13 +7,13 @@
 
     {% include header.html %}
     <div class="main">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-8 col-lg-push-2 content-container">{{ content }}</div>
-          <div class="col-lg-2 col-lg-pull-8 badges">
+          <div class="col-lg-6 col-lg-push-3 content-container">{{ content }}</div>
+          <div class="col-lg-3 col-lg-pull-6 badges">
             {% include badges-left.html %}
           </div>
-          <div class="col-lg-2 badges">
+          <div class="col-lg-3 badges">
             {% include badges-right.html %}
           </div>
         </div>

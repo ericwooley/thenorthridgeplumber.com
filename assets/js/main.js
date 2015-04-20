@@ -7,7 +7,7 @@ $(function(){
     _.each(waypoints, function(waypoint){
         new Waypoint({
             element: waypoint,
-            offset: '80%',
+            offset: '90%',
             handler: function(direction) {
                 if(direction === 'down'){
                     $(this.element).addClass('show-badge');

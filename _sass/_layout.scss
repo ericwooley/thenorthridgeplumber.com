@@ -174,39 +174,56 @@ footer {
 }
 
 .service-badge {
-    width: 100%;
-    &:before {
-        content: "";
-        display: block;
-    }
-    .panel {
-        transform: scale(.1);
-        opacity: 0;
-        transition: transform .5s, opacity .3s;
-        position: relative;
-        height: auto;
-        .panel-body {
-            position: absolute;
-            top:      0;
-            left:     0;
-            bottom:   0;
-            right:    0;
+    float: left;
+    @for $i from 1 through 100 {
+        &.size-#{$i} {
+            width: 1% * $i;
+            margin: 0;
+            padding: 0; 
+            border: 5px solid $pictures-background;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            .panel {
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                &:not(:last-child){
+                    border-bottom: 5px solid $pictures-background;
+                }    
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                border: none;
+                border-radius: 0;
+                .panel-body {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    bottom: 0;
+                }
+                &:before{
+                    content:" ";
+                    padding-top: 100%;/* vertical value as  100% equals width */
+                    display:inline-block;
+                }    
+            }
         }
-        &:before {
-            content:     "";
-            display:     block;
-            padding-top: 100%; /* initial ratio of 1:1*/
-        }
-    }
-   
-}
-.show-badge {
-    .panel {
-        opacity: 1;
-        transform: scale(1);
-        display: block        
     }
 }
+
+.panel {
+    transform: scale(.1);
+    opacity: 0;
+    transition: transform .5s, opacity .3s;
+}
+.show-badge.panel {
+    opacity: 1;
+    transform: scale(1);
+    display: block        
+}
+
 
 $offcanvas-width: 250px !default; // The width of the offcanvas menu
 $offcanvas-animation-time: 0.15s !default; // Transition time to pull/hide menu
